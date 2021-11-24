@@ -9,13 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@Entity(name = "pizza")
-public class PizzaView {
+@Entity(name = "pasta")
+public class PastaView {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
-    private long id_pizza;
+    private long id_pasta;
     private String name;
     private long price;
     private boolean in_stock;
