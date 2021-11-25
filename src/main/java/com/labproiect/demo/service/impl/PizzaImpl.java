@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,5 +18,17 @@ public class PizzaImpl implements PizzaBusiness {
     @Override
     public List<PizzaView> getPizza() {
         return pizzaRepository.findAll();
+    }
+
+    @Override
+    public PizzaView editPizza(Long id, PizzaView pizzaView) {
+        Optional<PizzaView> pizzaViewOptional = pizzaRepository.findById(id);
+
+        if (pizzaViewOptional.isEmpty()) {
+            return null;
+        }
+
+        pizzaView.setId_pizza(id);
+        return pizzaRepository.save(pizzaView);
     }
 }

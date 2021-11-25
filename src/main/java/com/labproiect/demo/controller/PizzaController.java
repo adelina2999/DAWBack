@@ -3,8 +3,7 @@ package com.labproiect.demo.controller;
 import com.labproiect.demo.service.PizzaBusiness;
 import com.labproiect.demo.view.entity.PizzaView;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +16,11 @@ public class PizzaController {
     @GetMapping("/pizzas")
     public List<PizzaView> getPizzas() {
         return pizzaBusiness.getPizza();
+    }
+
+    @PostMapping("/pizza")
+    public PizzaView editPizza(@RequestBody PizzaView pizzaView) {
+        return pizzaBusiness.editPizza(pizzaView.getId_pizza(), pizzaView);
     }
 
 }

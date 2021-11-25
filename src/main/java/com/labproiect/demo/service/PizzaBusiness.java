@@ -7,5 +7,6 @@ import java.util.List;
 public interface PizzaBusiness {
 
     List<PizzaView> getPizza();
+    PizzaView editPizza(Long id, PizzaView pizzaView);
 }
 
