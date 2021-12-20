@@ -9,12 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@Entity(name = "user")
+@Entity( name = "user" )
 public class UserView {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
+    @GeneratedValue( strategy = GenerationType.AUTO, generator="native" )
+    @GenericGenerator( name = "native",strategy = "native" )
     private long id;
     private String login;
     private String password;

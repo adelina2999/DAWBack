@@ -9,12 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@Entity(name = "pizza")
+@Entity( name = "pizza" )
 public class PizzaView {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
+    @GeneratedValue( strategy = GenerationType.AUTO, generator="native" )
+    @GenericGenerator( name = "native",strategy = "native" )
     private long id_pizza;
     private String name;
     private long price;
